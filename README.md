@@ -66,9 +66,13 @@ Put the original query back to keep it simple, but it's good to keep in mind tha
 5.2 Click ```Create Contact Point```. 
 
 Give it a name
+
 Select ```Email``` for integration
+
 Enter your Email address. 
+
 Leave everything else as default 
+
 Save
 
 ![image](https://github.com/user-attachments/assets/0ad749db-0f8e-4766-bf68-f7c74e130305)
