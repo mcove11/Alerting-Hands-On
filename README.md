@@ -101,6 +101,7 @@ At the top, select Save Rule and Exit.
 
 You will be brough to the Alerts Overview Page. Find the Folder you Created and expand it to show your alert group and rule. Watch in real time when it evaluates within the minute and turns to firing. 
 
-![image](https://github.com/user-attachments/assets/02243e1d-01b5-4186-a5e4-550695796e43)
+![image](https://github.com/user-attachments/assets/1676d97c-f7fe-44d1-be88-149098c8015e)
+
 
 
