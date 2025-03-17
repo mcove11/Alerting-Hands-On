@@ -38,7 +38,7 @@ Set it to a lower number, like 100 so we can test out it actually firing to us.
 ```
 histogram_quantile(0.95, sum(rate(traces_spanmetrics_latency_bucket{span_kind=~"SPAN_KIND_SERVER|SPAN_KIND_CONSUMER", job="ditl-demo-prod/checkoutservice", deployment_environment=~".*"} [$__rate_interval])) by (le,job,cloud_region)) * 1000
 ```
-Put the original query back to keep it simple, but it's good to keep in mind that you can have multiple series returned in a single alert query to get more information about where latency may be occuring. 
+Put the original query back to keep it simple, but it's good to keep in mind that you can have multiple series returned in a single alert query. This can help provide more information in the alert, as well as reduce the number of alerts you have to create.
 
 ## 3. Add Folder and labels
   3.1 Create a New Alert folder with your name. Folders are just used for Organization in the UI. 
