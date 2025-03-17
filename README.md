@@ -30,6 +30,13 @@ Set it to a lower number, like 100 so we can test out it actually firing to us.
 ![image](https://github.com/user-attachments/assets/494ffdc1-637b-4bfb-8886-e00570fb5ef9)
 
 
+3.4 Let's also look at what grouping looks like in Alerts. Temporarily replace your query with this query, where we have added ```cloud_region``` to the sum, breaking down the results by each cloud region we are deployed to. 
+
+```
+histogram_quantile(0.95, sum(rate(traces_spanmetrics_latency_bucket{span_kind=~"SPAN_KIND_SERVER|SPAN_KIND_CONSUMER", job="ditl-demo-prod/checkoutservice", deployment_environment=~".*"} [$__rate_interval])) by (le,job,cloud_region)) * 1000
+```
+Let's put the original query back to keep it simple, but it's good to keep in mind that you can have multiple series returned in a single alert query to get more information about where latency may be occuring. 
+
 ## 4. Add Folder and labels
   4.1 Create a New Alert folder with your name. Folders are just used for Organization in the UI. 
   4.2 Optionally, add some Labels. 
@@ -37,4 +44,11 @@ Set it to a lower number, like 100 so we can test out it actually firing to us.
   ![image](https://github.com/user-attachments/assets/8ca83637-9bdc-4bd4-b465-bfbfc8df8657)
 
 ## 5. Set Evaluation Behavior 
+
+5.1 Create a New Evaluation Group, name it {{initials}}-Eval Group. 
+
+![image](https://github.com/user-attachments/assets/b971a3b5-f4db-40f0-956a-20e3ccaa2606)
+
+5.2 Set your pending period to None. For testing purposes this will be helpful for us to see our alert quickly. In a production scenario, you would likely want this to be a little higher. 
+
 
