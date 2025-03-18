@@ -92,7 +92,7 @@ Note - In more advanced scenarios, you can use Notification Policies to route to
 
 6.3 Select the Dashboard and Panel: ```Systems Overview / Durations by Service```
 
-![image](https://github.com/user-attachments/assets/6b170eaf-7437-47d3-9bf1-46bc0a893ec3)
+![image](https://github.com/user-attachments/assets/1676d97c-f7fe-44d1-be88-149098c8015e)
 
 
 ## 7. Save the alert rule
@@ -101,7 +101,8 @@ At the top, select Save Rule and Exit.
 
 You will be brough to the Alerts Overview Page. Find the Folder you Created and expand it to show your alert group and rule. Watch in real time when it evaluates within the minute and turns to firing. 
 
-![image](https://github.com/user-attachments/assets/1676d97c-f7fe-44d1-be88-149098c8015e)
+
+![image](https://github.com/user-attachments/assets/c0cac8c1-8e02-4474-998c-49f99d7f76b4)
 
 
 
