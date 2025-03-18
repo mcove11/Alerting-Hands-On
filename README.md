@@ -88,7 +88,7 @@ Note - In more advanced scenarios, you can use Notification Policies to route to
 
 ```Service latency for {{ index $labels "job" }} has exceeded threshold at {{ index $values "A" }} ms for the last minute.```
 
-6.2 Add in the runbook URL: ```https://github.com/mcove11/Alerting-Hands-On/edit/main/README.md```
+6.2 Add in the runbook URL: ```[https://github.com/mcove11/Alerting-Hands-On/edit/main/README.md](https://github.com/mcove11/Alerting-Hands-On)```
 
 6.3 Select the Dashboard and Panel: ```Systems Overview / Durations by Service```
 
