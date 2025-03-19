@@ -8,12 +8,18 @@ On the left sidebar go to Alerts and IRM --> Alerting --> Alert Rules
 
 ![image](https://github.com/user-attachments/assets/f874d022-8d4b-4903-883f-ed03ca9a9e1d)
 
-## 1 Alert Name
+Click ```+ New Alert Rule```
+
+## 1. Alert Name
    Enter an Alert rule name. To Differentiate from others use the formatting of ```{{initials}}-TestAlert```. ex: ```MC-TestAlert```
 
 
 ## 2. Define our Alert Query and Condition: 
-  2.1 Define query and Alert Condition. Copy and paste in the query: 
+  2.1 Define query and Alert Condition. 
+
+  Switch from builder to code 
+  
+  Copy and paste in the query: 
   ```
     histogram_quantile(0.95, sum(rate(traces_spanmetrics_latency_bucket{span_kind=~"SPAN_KIND_SERVER|SPAN_KIND_CONSUMER", job="ditl-demo-prod/checkoutservice", deployment_environment=~".*"} [$__rate_interval])) by (le,job)) * 1000
   ```
@@ -21,7 +27,8 @@ On the left sidebar go to Alerts and IRM --> Alerting --> Alert Rules
 
  Click ```Run Query``` after you've added it in so you can see the current latency. 
 
- ![image](https://github.com/user-attachments/assets/8f0992e5-a000-4fd8-b8d7-fcde59e290c6)
+![image](https://github.com/user-attachments/assets/913f0e00-5e4b-4c11-9c2b-973483d9b0e7)
+
 
 
  2.2 Let's play around with the alert condition. By Default it is saying If above 0 fire the alert, in this case that will make the alert always be firing. 
@@ -42,7 +49,10 @@ Put the original query back to keep it simple, but it's good to keep in mind tha
 
 ## 3. Add Folder and labels
   3.1 Create a New Alert folder with your name. Folders are just used for Organization in the UI. 
+  
   3.2 Optionally, add some Labels. 
+
+  Labels are helpful for identifying an alert instance, routing the alert to the appropriate contact point, and including additional information in the alert notification. [Read more about them here.](https://grafana.com/docs/grafana/latest/alerting/fundamentals/alert-rules/annotation-label/)
   
   ![image](https://github.com/user-attachments/assets/8ca83637-9bdc-4bd4-b465-bfbfc8df8657)
 
